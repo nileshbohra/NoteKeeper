@@ -20,22 +20,22 @@ function App() {
   }, []);
 
   //posting data to DB through backend
-  function addNote(note) {
-    Axios.post(`${backend_url}/create`, {
+  async function addNote(note) {
+    await Axios.post(`${backend_url}/create`, {
       title: note.title,
       content: note.content,
     });
     //retreving new data when note added
-    Axios.get(`${backend_url}/read`).then((res) => {
+    await Axios.get(`${backend_url}/read`).then((res) => {
       setItems(res.data);
     });
   }
 
   //deleting data from DB through backend
-  function deleteNote(id) {
-    Axios.delete(`${backend_url}/delete/${id}`);
+  async function deleteNote(id) {
+    await Axios.delete(`${backend_url}/delete/${id}`);
     //retreving new data when note deleted
-    Axios.get(`${backend_url}/read`).then((res) => {
+    await Axios.get(`${backend_url}/read`).then((res) => {
       setItems(res.data);
     });
   }
