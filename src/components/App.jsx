@@ -44,19 +44,21 @@ function App() {
     <div>
       <Header />
       <CreateArea addNote={addNote} />
-      {isLoaded
-        ? items.map((item) => {
-            return (
-              <Note
-                key={item._id}
-                id={item._id}
-                delete={deleteNote}
-                title={item.title}
-                content={item.content}
-              />
-            );
-          })
-        : "Loading..."}
+      <div className="noteSection">
+        {isLoaded
+          ? items.map((item) => {
+              return (
+                <Note
+                  key={item._id}
+                  id={item._id}
+                  delete={deleteNote}
+                  title={item.title}
+                  content={item.content}
+                />
+              );
+            })
+          : "Loading..."}
+      </div>
       <Footer />
     </div>
   );

@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #eee;
+  width: 100vw;
+  background-image: url("../images/cubesBG.png");
+}
+
+/* ----------------------------- header section ----------------------------- */
+header {
+  background-color: #f5ba13;
+  padding: 16px 32px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h2 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  letter-spacing: 0.7px;
+  font-weight: 200;
+}
+
+/* ------------------------------- noteSection ------------------------------ */
+.noteSection {
+  height: 60vh;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form.createNoteForm {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 1px 5px #8a8989;
+          box-shadow: 0 1px 5px #8a8989;
+}
+
+form.createNoteForm input,
+form.createNoteForm textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.createNoteForm .fabButton {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+form.createNoteForm .fabButton:hover {
+  background-color: #eee;
+}
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 2px 5px #ccc;
+          box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  max-width: 300px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.note p {
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
+  font-size: 0.99em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  color: #f5ba13;
+  background-color: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+}
+
+.note button:hover {
+  background-color: #eee;
+}
+
+/* ----------------------------- footer section ----------------------------- */
+footer {
+  text-align: center;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+
+@media (max-width: 500px) {
+  header {
+    text-align: center;
+  }
+  form.createNoteForm {
+    width: 85vw;
+  }
+  footer {
+    position: relative;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

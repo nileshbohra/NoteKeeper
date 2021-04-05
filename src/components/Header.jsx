@@ -1,9 +1,10 @@
 import React from "react";
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 function Header() {
   return (
     <header>
-      <h1>NoteKeeper</h1>
+      <h2><EmojiObjectsIcon />NoteKeeper</h2>
     </header>
   );
 }

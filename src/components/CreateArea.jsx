@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Zoom from "@material-ui/core/Zoom";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -23,39 +26,37 @@ function CreateArea(props) {
     e.preventDefault();
   }
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div>
-      <form>
-        <Zoom in={isClicked} timeout={1000}>
-          <input
-            style={{ display: isClicked ? null : "none" }}
+    {/* clickawaylistener will close form when clicked outside the form */}
+      <ClickAwayListener onClickAway={() => setIsExpanded(false)}>
+        <form className="createNoteForm">
+          {isExpanded && (
+            <input
+              onChange={handleChange}
+              value={note.title}
+              name="title"
+              placeholder="Title"
+            />
+          )}
+          <textarea
+            onClick={() => setIsExpanded(true)}
             onChange={handleChange}
-            value={note.title}
-            name="title"
-            placeholder="Title"
+            value={note.content}
+            name="content"
+            placeholder="Take a note..."
+            rows={isExpanded ? "3" : "1"}
           />
-        </Zoom>
-        <textarea
-          onClick={() => setIsClicked(true)}
-          onChange={handleChange}
-          value={note.content}
-          name="content"
-          placeholder="Take a note..."
-          rows= {isClicked ? "3" : "1"}
-        />
-        <Zoom in={isClicked} timeout={1000}>
-          <button
-            style={{ display: isClicked ? null : "none" }}
-            onClick={submitNote}
-          >
-            Add
-          </button>
-        </Zoom>
-      </form>
+          <Zoom in={isExpanded} timeout={1000}>
+            <Fab onClick={submitNote} className="fabButton">
+              <AddIcon />
+            </Fab>
+          </Zoom>
+        </form>
+      </ClickAwayListener>
     </div>
   );
 }
-
 export default CreateArea;
