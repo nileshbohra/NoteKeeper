@@ -27,27 +27,6 @@ header h2 {
   font-weight: 200;
 }
 
-/* ------------------------------- noteSection ------------------------------ */
-.noteSection {
-  height: 60vh;
-  overflow: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 form.createNoteForm {
   position: relative;
   width: 480px;
@@ -88,6 +67,27 @@ form.createNoteForm .fabButton {
 
 form.createNoteForm .fabButton:hover {
   background-color: #eee;
+}
+
+/* ------------------------------- noteSection ------------------------------ */
+.noteSection {
+  height: 60vh;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .note {
@@ -136,7 +136,15 @@ form.createNoteForm .fabButton:hover {
 
 /* ----------------------------- footer section ----------------------------- */
 footer {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 2.5rem;
 }
@@ -145,6 +153,7 @@ footer p {
   color: #ccc;
 }
 
+/* ------------------------------ media queries ----------------------------- */
 @media (max-width: 500px) {
   header {
     text-align: center;
@@ -152,8 +161,8 @@ footer p {
   form.createNoteForm {
     width: 85vw;
   }
-  footer {
-    position: relative;
+  .note {
+    width: 84%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

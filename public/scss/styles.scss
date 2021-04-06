@@ -25,16 +25,6 @@ header {
   }
 }
 
-/* ------------------------------- noteSection ------------------------------ */
-.noteSection{
-  height: 60vh;
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 //form to create note
 form.createNoteForm {
@@ -74,6 +64,16 @@ form.createNoteForm {
   }
 }
 
+/* ------------------------------- noteSection ------------------------------ */
+.noteSection{
+  height: 60vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 //notes
 .note {
   background: #fff;
@@ -117,7 +117,9 @@ form.createNoteForm {
 
 /* ----------------------------- footer section ----------------------------- */
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 2.5rem;
   p {
@@ -125,6 +127,8 @@ footer {
   }
 }
 
+
+/* ------------------------------ media queries ----------------------------- */
 @media (max-width: 500px){
   header{
     text-align: center;
@@ -132,7 +136,7 @@ footer {
   form.createNoteForm{
   width: 85vw;   
   }
-  footer{
-    position: relative;
-  } 
+  .note{
+    width: 84%;
+  }
 }
