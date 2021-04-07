@@ -102,13 +102,15 @@ form.createNoteForm .fabButton:hover {
   float: left;
 }
 
-.note h1 {
+.note h1,
+.note #title {
   font-size: 1.1em;
   margin-bottom: 6px;
   color: rgba(0, 0, 0, 0.78);
 }
 
-.note p {
+.note p,
+.note #content {
   color: rgba(0, 0, 0, 0.7);
   margin-top: 10px;
   font-size: 0.99em;
@@ -117,9 +119,61 @@ form.createNoteForm .fabButton:hover {
   word-wrap: break-word;
 }
 
-.note button {
+.note #title,
+.note #content {
+  margin: 5px;
+  border: none;
+  padding: 3px;
+  outline: none;
+}
+
+.note #content {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.1em;
+  font-family: inherit;
+  resize: none;
+}
+
+.note .actionBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.note .actionBtn .updateClicked {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.note .actionBtn .updateClicked .updateBtn {
+  margin: 0 auto;
+  background-color: #f5ba13;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+.note .actionBtn button {
   position: relative;
-  float: right;
   color: #f5ba13;
   background-color: transparent;
   border: none;
@@ -130,8 +184,12 @@ form.createNoteForm .fabButton:hover {
   border-radius: 10px;
 }
 
-.note button:hover {
+.note .actionBtn button:hover {
   background-color: #eee;
+}
+
+.note .actionBtn .editBtn {
+  float: right;
 }
 
 /* ----------------------------- footer section ----------------------------- */

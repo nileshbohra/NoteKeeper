@@ -25,7 +25,6 @@ header {
   }
 }
 
-
 //form to create note
 form.createNoteForm {
   position: relative;
@@ -57,15 +56,15 @@ form.createNoteForm {
     height: 40px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    outline: none;    
-    &:hover{
+    outline: none;
+    &:hover {
       background-color: #eee;
     }
   }
 }
 
 /* ------------------------------- noteSection ------------------------------ */
-.noteSection{
+.noteSection {
   height: 60vh;
   overflow: auto;
   display: flex;
@@ -84,36 +83,73 @@ form.createNoteForm {
   width: 240px;
   margin: 16px;
   float: left;
-  h1 {
+  h1,
+  #title {
     font-size: 1.1em;
     margin-bottom: 6px;
-    color:rgba(0, 0, 0, 0.78);
+    color: rgba(0, 0, 0, 0.78);
   }
-  p {
-    color:rgba(0, 0, 0, 0.7);
+  p,
+  #content {
+    color: rgba(0, 0, 0, 0.7);
     margin-top: 10px;
     font-size: 0.99em;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  button {
-    position: relative;
-    float: right;
-    color: #f5ba13;
-    background-color: transparent;
+  #title,
+  #content {
+    margin: 5px;
     border: none;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
+    padding: 3px;
     outline: none;
-    border-radius: 10px;
-    &:hover{
-      background-color: #eee;
+  }
+  #content {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.1em;
+    font-family: inherit;
+    resize: none;
+  }
+  .actionBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .updateClicked {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .updateBtn{
+        margin: 0 auto;
+        background-color: #f5ba13;
+        color: white;
+        width: fit-content;
+        padding: 5px 10px;
+      }
+    }
+    button {
+      position: relative;
+      color: #f5ba13;
+      background-color: transparent;
+      border: none;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      outline: none;
+      border-radius: 10px;
+      &:hover {
+        background-color: #eee;
+      }
+    }
+    .editBtn {
+      float: right;
     }
   }
 }
-
 
 /* ----------------------------- footer section ----------------------------- */
 footer {
@@ -127,16 +163,15 @@ footer {
   }
 }
 
-
 /* ------------------------------ media queries ----------------------------- */
-@media (max-width: 500px){
-  header{
+@media (max-width: 500px) {
+  header {
     text-align: center;
   }
-  form.createNoteForm{
-  width: 85vw;   
+  form.createNoteForm {
+    width: 85vw;
   }
-  .note{
+  .note {
     width: 84%;
   }
 }

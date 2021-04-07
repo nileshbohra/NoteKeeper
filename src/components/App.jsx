@@ -19,6 +19,12 @@ function App() {
     });
   }, []);
 
+  async function fetchData() {
+    await Axios.get(`${backend_url}/read`).then((res) => {
+      setItems(res.data);
+    });
+  }
+
   //posting data to DB through backend
   async function addNote(note) {
     await Axios.post(`${backend_url}/create`, {
@@ -26,18 +32,22 @@ function App() {
       content: note.content,
     });
     //retreving new data when note added
-    await Axios.get(`${backend_url}/read`).then((res) => {
-      setItems(res.data);
+    fetchData();
+  }
+
+  async function updateNote(id, title, content) {
+    await Axios.put(`${backend_url}/update/${id}`, {
+      title: title,
+      content: content,
     });
+    fetchData();
   }
 
   //deleting data from DB through backend
   async function deleteNote(id) {
     await Axios.delete(`${backend_url}/delete/${id}`);
     //retreving new data when note deleted
-    await Axios.get(`${backend_url}/read`).then((res) => {
-      setItems(res.data);
-    });
+    fetchData();
   }
 
   return (
@@ -46,14 +56,14 @@ function App() {
       <CreateArea addNote={addNote} />
       <div className="noteSection">
         {isLoaded
-          ? items.map((item) => {
+          ? items.map((note) => {
               return (
                 <Note
-                  key={item._id}
-                  id={item._id}
+                  key={note._id}
+                  id={note._id}
                   delete={deleteNote}
-                  title={item.title}
-                  content={item.content}
+                  update={updateNote}
+                  note={note}
                 />
               );
             })
