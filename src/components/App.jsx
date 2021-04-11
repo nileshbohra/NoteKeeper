@@ -56,17 +56,19 @@ function App() {
       <CreateArea addNote={addNote} />
       <div className="noteSection">
         {isLoaded
-          ? items.map((note) => {
-              return (
-                <Note
-                  key={note._id}
-                  id={note._id}
-                  delete={deleteNote}
-                  update={updateNote}
-                  note={note}
-                />
-              );
-            })
+          ? items.length > 0
+            ? items.map((note) => {
+                return (
+                  <Note
+                    key={note._id}
+                    id={note._id}
+                    delete={deleteNote}
+                    update={updateNote}
+                    note={note}
+                  />
+                );
+              })
+            : <div style={{textAlign:"center", color: "grey", letterSpacing: 1.2}}><p>hmm! you don't have any notes</p><p>create one now.</p></div>
           : "Loading..."}
       </div>
       <Footer />
